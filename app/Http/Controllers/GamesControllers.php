@@ -89,7 +89,12 @@ class GamesControllers extends Controller
     public function edit($id)
     {
         $game = Game::find($id);
-        return view('games.edit', compact('game'));
+        if ($game) {
+            return view('games.edit', compact('game'));
+        } else {
+            // Manejar el caso en el que el juego no se encuentra
+            return redirect()->route('games.index')->with('error', 'El juego no se encuentra.');
+        }
     }
 
     /**
