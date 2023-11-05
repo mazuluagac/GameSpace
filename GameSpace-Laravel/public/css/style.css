@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Chakra Petch';
+}
+
+/* INDEX */
+#cont-principal{
+    height: 100%;
+    width: 85%;
+    background-color: rgba(66, 66, 66, 0.7);
+}
+#mainNav{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: black!important;
+    border: 1px solid #ffffff;
+    z-index: 9999;
+}
+
+#mainNav a.nav-link {
+    color: #fff; /*Color del texto en blanco*/
+}
+
+#mainNav .navbar-brand {
+    color: #fff !important; /*Color del texto del elemento .navbar-brand en blanco */
+}
+
+#botonIniciarS{
+    border: 1px solid;
+    color: #000;
+    font-weight: 600;
+    padding: .25rem .5rem;
+}
+
+#botonCrearC{
+    background-color: #fff!important;
+    border: 1px solid #fff;
+    color: #000;
+    font-weight: 600;
+    padding: .25rem .5rem;
+}
+
+body {
+    padding-top: 80px; /* Ajusta el valor según sea necesario para el espacio de la barra de navegación */
+    /* background-image: url(''); */
+    background-color: black !important;
+}
+
+.custom-navbar {
+    z-index: 300; /* Valor alto para la barra de navegación */
+}
+
+.carousel {
+    z-index: 1; /* Valor menor para el carrusel */
+    max-width: 85%; 
+    margin: 0 auto;
+    position: relative;
+    
+}
+
+.juego{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+}
+
+/* Estilo de desenfoque */
+.image {
+    transition: filter 0.3s;
+}
+
+.image:hover {
+    filter: blur(5px); /* Aplica un desenfoque al pasar el mouse */
+}
+
+/* Estilo del cuadro emergente de información */
+.image-info-popup {
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid #ccc;
+    color: #ffffff;
+    padding: 10px;
+    z-index: 1000;
+    max-height: 400px;
+    max-width: 300px; /* Ajusta el ancho máximo según tu diseño */
+    word-wrap: break-word; /* Evita que el texto se salga del cuadro */
+    pointer-events: none; /* Evita que el cuadro afecte la interacción del usuario con otros elementos */
+  }
+
+  .grande {
+    font-size: 20px; /* Tamaño de fuente más grande */
+    /* Otros estilos CSS según sea necesario */
+}
+
+#hrindex{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 3px solid #5728ff !important;
+}
+
+/* REGISTRO E INICIO DE SESIÓN */
+#h1modif,#parrafoForm{
+    text-align: center;
+    color: #ffffff;
+}
+
+form label{
+    color: #ffffff;
+}
+
+
+form#formRegistro{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;}
+
+form#formInicio{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+/* Estilos para los campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #666262;
+}
+
+/* Estilos para el botón de envío */
+#botonEnviar {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+}
+
+/* Estilos para las etiquetas */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Footer */
+.pie-pagina{
+    width: 100%;
+    background-color: #000000;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#developers{
+    color: white;
+}
+.pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+}
+.pie-pagina .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #5728ff;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: #9b80ff;
+}
+.pie-pagina .grupo-2{
+    background-color: #3b3b3b;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+}
+
+/* ESTILOS JUEGO */
+#cont-juego {
+    margin-top: 5px;
+    
+    background: linear-gradient(to bottom, #424242B3, #424242B3);
+    opacity: 0.9;
+    color: #ffffff;
+  }
+  
+  #h1modif {
+    font-size: 36px;
+    margin-top: 20px;
+  }
+  
+  #cover {
+    width: 50%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  #fecha-lanzamiento,
+  #genero,
+  #tamaño,
+  #resumen {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  #enlace-descarga {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
+  #enlace-descarga:hover {
+    background-color: #0069d9;
+  }
+  
+  #galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  #galeria img {
+    width: 30%;
+    margin-bottom: 20px;
+  }
+  
+  #tags {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+  }
+  
+  #tags li {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  #calificacion {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  #calificacion span {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  #calificacion i {
+    font-size: 36px;
+    color: #f1c40f;
+  }
+
+  #divTrailer{
+    text-align: center;
+  }
