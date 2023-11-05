@@ -10,6 +10,7 @@ Route::delete('/authors/{id}',[GamesControllers::class,'destroy'])->name('author
 Route::put('/authors/{id}',[GamesControllers::class,'update'])->name('authors.update');
 Route::get('/authors_edit/{id}',[GamesControllers::class,'edit'])->name('authors.edit');
 
+
 Route::get('/', function () {
     return view('index');
 });
