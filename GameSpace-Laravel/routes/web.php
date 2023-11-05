@@ -11,6 +11,9 @@ Route::put('/games/{id}',[GamesControllers::class,'update'])->name('games.update
 Route::get('/games/{id}',[GamesControllers::class,'edit'])->name('games.edit');
 
 Route::get('/games/create', [GamesControllers::class, 'create'])->name('games.create');
+Route::post('/games', [GamesControllers::class, 'store'])->name('games.store');
+
+
 
 
 Route::get('/', function () {

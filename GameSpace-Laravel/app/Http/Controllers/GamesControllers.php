@@ -27,7 +27,8 @@ class GamesControllers extends Controller
      */
     public function create()
     {
-        return view('games.create'); //Poner Cuidado que solo lo puse para tenerlo en cuenta//
+        return view('games.create');
+        
     }
 
     /**
@@ -38,13 +39,30 @@ class GamesControllers extends Controller
      */
     public function store(Request $request)
     {
-        $game = new Game;
-        $game->title = $request->input('title');
-        $game->genre = $request->input('genre');
-        $game->release_date = $request->input('release_date');
-        $game->summary = $request->input('summary');
-        // Otras propiedades del juego
+        $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+            'imagen' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validación para la imagen
+            'fecha_lanzamiento' => 'required',
+            'genero' => 'required',
+            'tamaño' => 'required',
+            'calificacion' => 'required|numeric',
+        ]);
 
+        $game = new Game;
+        $game->nombre = $request->input('nombre');
+        $game->descripcion = $request->input('descripcion');
+        $game->fecha_lanzamiento = $request->input('fecha_lanzamiento');
+        $game->genero = $request->input('genero');
+        $game->tamaño = $request->input('tamaño');
+        $game->calificacion = $request->input('calificacion');
+
+        if ($request->hasFile('imagen')) {
+            $image = $request->file('imagen');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('public', $imageName);
+            $game->imagen = $imageName;
+        }
         $game->save();
 
         return redirect()->route('games.index');
@@ -83,16 +101,35 @@ class GamesControllers extends Controller
      */
     public function update(Request $request, $id)
     {
-        $game = Game::find($id);
-        $game->title = $request->input('title');
-        $game->genre = $request->input('genre');
-        $game->release_date = $request->input('release_date');
-        $game->summary = $request->input('summary');
-        // Otras propiedades del juego
+        
+       // Validar los datos ingresados en el formulario
+    $request->validate([
+        'nombre' => 'required|string',
+        'descripcion' => 'required|string',
+        'genero' => 'required|string',
+        'fecha_lanzamiento' => 'required|date',
+        'tamaño' => 'required|string',
+        'calificacion' => 'required|numeric',
+        'imagen' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validar la imagen (opcional)
+    ]);
 
-        $game->save();
+    $game = Game::find($id);
+    $game->nombre = $request->nombre;
+    $game->descripcion = $request->descripcion;
+    $game->genero = $request->genero;
+    $game->fecha_lanzamiento = $request->fecha_lanzamiento;
+    $game->tamaño = $request->tamaño;
+    $game->calificacion = $request->calificacion;
 
-        return redirect()->route('games.index');
+    // Manejo de la imagen si se proporciona
+    if ($request->hasFile('imagen')) {
+        $imagenPath = $request->file('imagen')->store('imagenes', 'public');
+        $game->imagen = $imagenPath;
+    }
+
+    $game->save();
+
+    return redirect()->route('games.index')->with('success', 'El juego se ha actualizado correctamente.');
     }
 
     /**
