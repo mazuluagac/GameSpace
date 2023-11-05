@@ -11,5 +11,5 @@ Route::put('/authors/{id}',[GamesControllers::class,'update'])->name('authors.up
 Route::get('/authors_edit/{id}',[GamesControllers::class,'edit'])->name('authors.edit');
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
