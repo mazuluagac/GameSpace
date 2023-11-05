@@ -16,6 +16,7 @@ Route::post('/games', [GamesControllers::class, 'store'])->name('games.store');
 
 
 
+
 Route::get('/', function () {
     return view('index');
 });
