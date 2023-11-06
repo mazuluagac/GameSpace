@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1 class="mb-4">Listado de Juegos</h1>
+    <h1 class="mb-4" style="color: white;">Listado de Juegos</h1>
     <a href="{{ route('games.create') }}" class="btn btn-primary mb-3">Agregar Juego</a>
 
     <table class="table table-striped">

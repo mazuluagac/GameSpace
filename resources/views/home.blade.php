@@ -10,7 +10,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="{{ route('home')}}">
             <img src="assets/logo game space/2.png" alt="Logo" width="50" height="50" class="...">
             GAME SPACE</a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -19,6 +19,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#juegosNS">Juegos Switch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('games.index') }}">Listado Juegos</a>
           </li>
         </ul>
         <form class="d-flex" role="search">
