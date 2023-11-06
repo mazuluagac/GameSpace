@@ -39,11 +39,13 @@ Route::get('/', function () {
 });
 Route::get('/games',[GamesControllers::class,'index'])->name('games.index');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::post('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
