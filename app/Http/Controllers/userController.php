@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class userController extends Controller
 {
@@ -11,9 +13,10 @@ class userController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function index()
     {
-        $user = \App\Models\User::all();
+        $user = User::all();
         return view('users.index', compact('user'));
 
     }
@@ -34,7 +37,7 @@ class userController extends Controller
             'password' => 'required',
             'role' => 'required',
         ]);
-        $user = new \App\Models\User;
+        $user = new User;
         $user->name = $request->get('name');
         $user->email = $request->get('email'); 
         $user->password = $request->get('password');
@@ -46,14 +49,14 @@ class userController extends Controller
     
     public function show($id)
     {
-        $user = \App\Models\User::find($id);
+        $user = User::find($id);
         return view('users.show', compact('user'));
     }
 
     
     public function edit($id)
     {
-        $user = \App\Models\User::find($id);
+        $user = User::find($id);
         return view('users.edit', compact('user'));
     }
 
@@ -66,7 +69,7 @@ class userController extends Controller
             'password' => 'required',
             'role' => 'required',
         ]);
-        $user = \App\Models\User::find($id);
+        $user = User::find($id);
         $user->name = $request->get('name');
         $user->email= $request->get('email');
         $user->password = $request->get('password');
@@ -79,7 +82,7 @@ class userController extends Controller
     
     public function destroy($id)
     {
-        $user = \App\Models\User::find($id);
+        $user = User::find($id);
         $user->delete();
         return redirect()->route('users.index')->with('success', 'User has been deleted');
     }
