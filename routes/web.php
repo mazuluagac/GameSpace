@@ -18,6 +18,15 @@ Route::get('/games/create', [GamesControllers::class, 'create'])->name('games.cr
 Route::post('/games', [GamesControllers::class, 'store'])->name('games.store');
 Route::get('/games/{id}',[GamesControllers::class,'edit'])->name('games.edit');
 
+//Route::get('/users', 'UserController@index')->name('users.index');
+//Route::get('/users/create', 'UserController@create')->name('users.create');
+//Route::post('/users', 'UserController@store')->name('users.store');
+//Route::get('/users/{user}', 'UserController@show')->name('users.show');
+//Route::get('/users/{user}/edit', 'UserController@edit')->name('users.edit');
+//Route::put('/users/{user}', 'UserController@update')->name('users.update');
+//Route::delete('/users/{user}', 'UserController@destroy')->name('users.destroy');
+
+
 
 Route::get('/', function () {
     return view('index');
