@@ -42,7 +42,7 @@
             <a class="nav-link" href="{{ route('games.index') }}">Listado Juegos</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
+        <form action="{{ route('search') }}" class="d-flex" role="search" method="GET">
           <input class="form-control me-2" type="search" placeholder="Buscar juego" aria-label="search">
           <button class="btn btn-outline-primary" type="submit">Buscar</button>
         </form>
