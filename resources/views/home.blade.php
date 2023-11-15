@@ -1,38 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Barra de navegación -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary" id="mainNav">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars ms-1"></i>
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="{{ route('home')}}">
-            <img src="assets/logo game space/2.png" alt="Logo" width="50" height="50" class="...">
-            GAME SPACE</a>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ route('home')}}">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#juegosNS">Juegos Switch</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('games.index') }}">Listado Juegos</a>
-          </li>
-        </ul>
-        <form action="{{ route('search') }}" method="GET">
-          <input class="form-control me-2" type="text" name="query" placeholder="Buscar juegos..." aria-label="search">
-          <button class="btn btn-outline-primary" type="submit">Buscar</button>
-        </form>
-        <button class="btn btn-outline-primary" id="botonIniciarS"><a href="{{ route('login')}}">Iniciar Sesion</a></button>
-        <button class="btn btn-outline-primary" id="botonCrearC"><a href="{{ route('register')}}">Crear cuenta</a></button>
-      </div>
-    </div>
-  </nav>
+
     <!-- contenedor general -->
     <div class="container-fluid" id="cont-principal">
     <!-- carousel imagenes -->
@@ -83,7 +52,7 @@
                 <h3><b>Mario Kart 8 Deluxe</b></h3>
                 <img src="assets\img\catalogo\Mariokart8Car.jpg" class="image" width="300" height="400" alt="imagen1" data-info="Mario Kart 8 Deluxe || Fecha de lanzamiento: 20/03/2017 || Género: Fiesta,Carreras || Tamaño del archivo: 6,8 GB|| <img src='assets/iconos/estrella.png' alt='''> 4,2  ">
                 <ul>
-                    <button class="btn btn-outline-primary"><a href="juego.html">Ir al post</a></button>
+                    <button class="btn btn-outline-primary"><a href="juego.blade.php">Ir al post</a></button>
                 </ul>
             </div>
               
@@ -92,9 +61,9 @@
               <div class="juego">
                 <h3><b>Super Smash Bros Ultimate</b></h3>
                 <img src="assets\img\catalogo\SuperSmashCar.jpg" class="image" width="300" height="400" alt="imagen2" data-info="
-    <span class='grande'>Super Smash Bros Ultimate </span>|| Fecha de lanzamiento: 07/12/2018|| Género: Acción, Lucha, Multijugador || Tamaño del archivo: 13,6 GB || <img src='assets/iconos/estrella.png' alt='''> 4,9|| ||">
+                <span class='grande'>Super Smash Bros Ultimate </span>|| Fecha de lanzamiento: 07/12/2018|| Género: Acción, Lucha, Multijugador || Tamaño del archivo: 13,6 GB || <img src='assets/iconos/estrella.png' alt='''> 4,9|| ||">
                 <ul>
-                    <button class="btn btn-outline-primary"><a href="juego.html">Ir al post</a></button>
+                    <button class="btn btn-outline-primary"><a href="juego.blade.php">Ir al post</a></button>
                 </ul>
             </div>
               
@@ -104,7 +73,7 @@
                 <h3><b>Xenoblade Chronicles 3</b></h3>
                 <img src="assets\img\catalogo\XenobladeCar.jpg" class="image" width="300" height="400" alt="imagen2" data-info="Xenoblade Chronicles 3 || Fecha de lanzamiento: 01/01/2022 || Género: Acción ||Tamaño del archivo: 10 GB || <img src='assets/iconos/estrella.png' alt='''> 4,4 ">
                 <ul>
-                    <button class="btn btn-outline-primary"><a href="juego.html">Ir al post</a></button>
+                    <button class="btn btn-outline-primary"><a href="juego.blade.php">Ir al post</a></button>
                 </ul>
               </div>
             </div>
