@@ -24,9 +24,9 @@
             <a class="nav-link" href="{{ route('games.index') }}">Listado Juegos</a>
           </li>
         </ul>
-        <form action="{{ route('search') }}" method="GET">
-          <input type="text" name="query" placeholder="Buscar juegos...">
-          <button type="submit">Buscar</button>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar juego" aria-label="search">
+          <button class="btn btn-outline-primary" type="submit">Buscar</button>
         </form>
         <button class="btn btn-outline-primary" id="botonIniciarS"><a href="{{ route('login')}}">Iniciar Sesion</a></button>
         <button class="btn btn-outline-primary" id="botonCrearC"><a href="{{ route('register')}}">Crear cuenta</a></button>
@@ -119,7 +119,7 @@
       <p id="image-info-text"></p>
     </div>
 
-    <!-- Footer -->
+    <!-- footer -->
     <footer class="pie-pagina">
       <div class="grupo-1">
           <div class="box">
@@ -152,14 +152,8 @@
           <small>&copy; 2023 <b>GAME SPACE</b> - Todos los Derechos Reservados.</small>
       </div>
   </footer>
-
-
       <!-- JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('js/script.js') }}"></script>
-    <!--Iconos-->
-    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+
 <!-- </body>
 
 </html> -->
