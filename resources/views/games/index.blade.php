@@ -7,8 +7,8 @@
 
     <!-- Botones para generación de reportes -->
     <div class="mb-3">
-        <a href="{{ route('games.export-excel') }}" class="btn btn-success">Exportar a Excel</a>
-        <a href="{{ route('games.export-pdf') }}" class="btn btn-danger">Exportar a PDF</a>
+        <a href="{{route('games.descargar-excel')}}" class="btn btn-success">Exportar a Excel</a>
+        <a href="{{route('games.descargar-pdf')}}" class="btn btn-danger">Generar PDF</a>
     </div>
 
     <table class="table table-striped">

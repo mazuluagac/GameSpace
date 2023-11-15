@@ -15,7 +15,7 @@ class GamesControllers extends Controller
     public function index()
     {
         $games = Game::all();
-        return view('games.index', compact('games'));
+        return view('games.index')->with('games', $games);
        // return response()->json($games);
 
     }
@@ -123,18 +123,17 @@ class GamesControllers extends Controller
         return view('games.search', compact('games', 'query'));
     }
 
-    public function exportExcel()
+    public function generarExcel()
     {
         $game = Game::all();
 
-        return Excel::download(new GamesExport($game), 'listado_juegos.xlsx');
+        return Excel::download(new GamesExport, 'listado_juegos.xlsx');
     }
 
-    public function exportPDF()
+    public function generarPDF()
     {
-        $game = Game::all();
+        $games = Game::all();
         $pdf = PDF::loadView('games.download', compact('game'));
-
         return $pdf->download('games.pdf');
     }
 }

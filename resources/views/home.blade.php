@@ -52,7 +52,7 @@
                 <h3><b>Mario Kart 8 Deluxe</b></h3>
                 <img src="assets\img\catalogo\Mariokart8Car.jpg" class="image" width="300" height="400" alt="imagen1" data-info="Mario Kart 8 Deluxe || Fecha de lanzamiento: 20/03/2017 || Género: Fiesta,Carreras || Tamaño del archivo: 6,8 GB|| <img src='assets/iconos/estrella.png' alt='''> 4,2  ">
                 <ul>
-                    <button class="btn btn-outline-primary"><a href="juego.blade.php">Ir al post</a></button>
+                    <button class="btn btn-outline-primary"><a href="{{ route('juego')}}">Ir al post</a></button>
                 </ul>
             </div>
               

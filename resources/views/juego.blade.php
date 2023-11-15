@@ -1,32 +1,6 @@
-<!DOCTYPE html>
-<html lang="es-mx">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAME SPACE | Descargar Juego</title>
-    <!-- Flaticon-->
-    <link rel="icon" type="" href="assets/iconos/palanca-de-mando.png" />
-    <!-- css -->
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-<body style="background-image: url('assets/fondoGame.png');">
-    <!-- Barra de navegación -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="mainNav">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"></button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="index.html">
-                    <img src="assets/logo game space/2.png" alt="Logo" width="50" height="50" class="...">
-                    GAME SPACE</a>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-      </nav>
+@extends('layouts.app')
+
+@section('content')
     <!-- contenedor -->
     <div class="container-fluid" id="cont-juego">
         <div class="row">

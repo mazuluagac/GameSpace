@@ -6,6 +6,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\PDF;
+
 
 class userController extends Controller
 {
@@ -78,12 +82,22 @@ class userController extends Controller
         return redirect()->route('users.index')->with('success', 'User has been updated');
     }
 
-    
-    
     public function destroy($id)
     {
         $user = User::find($id);
         $user->delete();
         return redirect()->route('users.index')->with('success', 'User has been deleted');
+    }
+
+    public function generarExcel()
+    {
+        return Excel::download(new UsersExport, 'listado_usuarios.xlsx');
+    }
+
+    public function generarPDF()
+    {
+        $users = User::all();
+        $pdf = PDF::loadView('users.download', compact('user'));
+        return $pdf->download('games.pdf');
     }
 }

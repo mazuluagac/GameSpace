@@ -7,12 +7,12 @@
 @if(count($games) > 0)
     <ul>
         @foreach($games as $game)
-            <li>{{ $game->title }}</li>
-            
-
-            
-            
-            
+        <li>{{ $game->nombre }}</li>;
+        <li>{{ $game->descripcion }} </li>;
+        <li>{{ $game->genero }} </li>;
+        <li>{{ $game->fecha_lanzamiento }} </li>;
+        <li>{{ $game->tamaño }} </li>;
+        <li>{{ $game->calificacion }}</li>;
         @endforeach
     </ul>
 @else
