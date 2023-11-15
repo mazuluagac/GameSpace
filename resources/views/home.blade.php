@@ -2,37 +2,7 @@
 
 @section('content')
 <!-- Barra de navegación -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary" id="mainNav">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars ms-1"></i>
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="{{ route('home')}}">
-            <img src="assets/logo game space/2.png" alt="Logo" width="50" height="50" class="...">
-            GAME SPACE</a>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ route('home')}}">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#juegosNS">Juegos Switch</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('games.index') }}">Listado Juegos</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Buscar juego" aria-label="search">
-          <button class="btn btn-outline-primary" type="submit">Buscar</button>
-        </form>
-        <button class="btn btn-outline-primary" id="botonIniciarS"><a href="{{ route('login')}}">Iniciar Sesion</a></button>
-        <button class="btn btn-outline-primary" id="botonCrearC"><a href="{{ route('register')}}">Crear cuenta</a></button>
-      </div>
-    </div>
-  </nav>
+
     <!-- contenedor general -->
     <div class="container-fluid" id="cont-principal">
     <!-- carousel imagenes -->
@@ -119,7 +89,7 @@
       <p id="image-info-text"></p>
     </div>
 
-    <!-- Footer -->
+    <!-- footer -->
     <footer class="pie-pagina">
       <div class="grupo-1">
           <div class="box">
@@ -152,14 +122,8 @@
           <small>&copy; 2023 <b>GAME SPACE</b> - Todos los Derechos Reservados.</small>
       </div>
   </footer>
-
-
       <!-- JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('js/script.js') }}"></script>
-    <!--Iconos-->
-    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+
 <!-- </body>
 
 </html> -->

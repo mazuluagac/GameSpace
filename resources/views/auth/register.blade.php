@@ -1,24 +1,6 @@
 @extends('layouts.app')
     <title>Registrate | Game-Space</title>
 @section('content')
-<nav class="navbar navbar-expand-lg bg-body-tertiary" id="mainNav">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="{{ route('home') }}">
-                    <img src="assets/logo game space/2.png" alt="Logo" width="50" height="50" class="...">
-                    GAME SPACE
-                </a>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Inicio</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
