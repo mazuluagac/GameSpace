@@ -5,6 +5,12 @@
     <h1 class="mb-4" style="color: white;">Listado de Juegos</h1>
     <a href="{{ route('games.create') }}" class="btn btn-primary mb-3">Agregar Juego</a>
 
+    <!-- Botones para generación de reportes -->
+    <div class="mb-3">
+        <a href="{{ route('games.export-excel') }}" class="btn btn-success">Exportar a Excel</a>
+        <a href="{{ route('games.export-pdf') }}" class="btn btn-danger">Exportar a PDF</a>
+    </div>
+
     <table class="table table-striped">
         <thead>
             <tr>

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Game;
+use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\PDF;
+use App\Exports\GamesExport;
+
 
 class GamesControllers extends Controller
 {
@@ -109,5 +113,28 @@ class GamesControllers extends Controller
         $game->delete();
 
         return redirect()->route('games.index');
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        $games = Game::where('title', 'LIKE', "%$query%")->get();
+
+        return view('games.search', compact('games', 'query'));
+    }
+
+    public function exportExcel()
+    {
+        $game = Game::all();
+
+        return Excel::download(new GamesExport($game), 'listado_juegos.xlsx');
+    }
+
+    public function exportPDF()
+    {
+        $game = Game::all();
+        $pdf = PDF::loadView('games.download', compact('game'));
+
+        return $pdf->download('games.pdf');
     }
 }

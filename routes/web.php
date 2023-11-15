@@ -21,6 +21,8 @@ Route::middleware(['auth' , 'role:administrador'])->group(function () {
     Route::put('/games/{id}',[GamesControllers::class,'update'])->name('games.update');
     Route::get('/games/create', [GamesControllers::class, 'create'])->name('games.create');
     Route::get('/games/{id}',[GamesControllers::class,'edit'])->name('games.edit');
+    Route::get('/games/export-excel', 'GameController@exportExcel')->name('games.export-excel');
+    Route::get('download-pdf',[GamesController::class,'exportPDF'])->name('games.export-pdf');
 });
 
 //------------ MODERADORES -------------------
@@ -32,6 +34,8 @@ Route::middleware(['auth', 'role:moderador'])->group(function () {
     });
     Route::post('/games',[GamesControllers::class,'store'])->name('games.store');
     Route::put('/games/{id}',[GamesControllers::class,'update'])->name('games.update');
+    Route::get('/games/export-excel', 'GameController@exportExcel')->name('games.export-excel');
+    Route::get('download-pdf',[GamesController::class,'exportPDF'])->name('games.export-pdf');
 });
 
 // RUTAS PUBLICAS - USUARIOS
@@ -39,6 +43,7 @@ Route::get('/', function () {
     return view('home');
 });
 Route::get('/games',[GamesControllers::class,'index'])->name('games.index');
+Route::get('/search', 'GameController@search')->name('search');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
@@ -46,7 +51,8 @@ Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->na
 Route::post('/register', [RegisterController::class, 'register']);
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// Auth::routes();
+
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
