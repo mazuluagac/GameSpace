@@ -24,8 +24,8 @@
             <a class="nav-link" href="{{ route('games.index') }}">Listado Juegos</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Buscar juego" aria-label="search">
+        <form action="{{ route('search') }}" method="GET">
+          <input class="form-control me-2" type="text" name="query" placeholder="Buscar juegos..." aria-label="search">
           <button class="btn btn-outline-primary" type="submit">Buscar</button>
         </form>
         <button class="btn btn-outline-primary" id="botonIniciarS"><a href="{{ route('login')}}">Iniciar Sesion</a></button>
