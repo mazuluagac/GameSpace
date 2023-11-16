@@ -10,7 +10,7 @@
   <title>GAME SPACE | Descarga juegos para PC</title>
   <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body style="background-image: url('assets/fondoGame.png');">
         <!-- Aquí puedes colocar la barra de navegación u otros elementos de cabecera -->
    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="mainNav">
     <div class="container-fluid">

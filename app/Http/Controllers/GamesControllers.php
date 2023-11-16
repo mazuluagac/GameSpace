@@ -120,7 +120,7 @@ class GamesControllers extends Controller
         $query = $request->input('query');
         $games = Game::where('title', 'LIKE', "%$query%")->get();
 
-        return view('games.search', compact('games', 'query'));
+        return view('search.search', compact('games', 'query'));
     }
 
     public function generarExcel()

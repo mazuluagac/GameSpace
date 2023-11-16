@@ -14,15 +14,28 @@ class Roles
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
+    // public function handle(Request $request, Closure $next, $roles)
+    // {
+    //     $newRol = explode('|', $roles);
+
+    //     $roleName = strtolower($request->user()->role->label);
+
+    //     if(!in_array($roleName,$newRol))
+    //         return abort(403,__('Unauthorized'));
+
+    //     return $next($request);
+    // }
+
     public function handle(Request $request, Closure $next, $roles)
     {
-        $newRol = explode('|', $roles);
+    $userRoles = $request->user()->roles()->pluck('name')->toArray();
 
-        $roleName = strtolower($request->user()->role->label);
-
-        if(!in_array($roleName,$newRol))
-            return abort(403,__('Unauthorized'));
-
-        return $next($request);
+    foreach ($roles as $role) {
+        if (in_array($role, $userRoles)) {
+            return $next($request);
+        }
     }
+
+    return abort(403, __('Unauthorized'));
+} 
 }

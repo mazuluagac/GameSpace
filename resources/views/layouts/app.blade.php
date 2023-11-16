@@ -16,11 +16,29 @@
     <!-- Aquí puedes incluir enlaces a tus hojas de estilo CSS, scripts JS, etc. -->
 </head>
 <body style="background-image: url('assets/fondoGame.png');">
-<div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <header>
+    <div id="app">
+        <style>
+            #navPlantilla{
+                background-color: #000000;
+            }
+            #botonIniciarS{
+                background-color: #000000;
+                color: white;
+            }
+            #botonCrearC{
+                background-color: #000000;
+                color: white;
+            }
+
+            .custom-link {
+            color: white;
+            }
+        </style>
+        <nav class="navbar navbar-expand-md shadow-sm" id="navPlantilla">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand custom-link" href="{{ url('/') }}">
+                    GAME SPACE
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -38,13 +56,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a>
+                                    <a class="nav-link custom-link" href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Crear una cuenta') }}</a>
+                                    <a class="nav-link custom-link" href="{{ route('register') }}">{{ __('Crear una cuenta') }}</a>
                                 </li>
                             @endif
                         @else
@@ -70,8 +88,6 @@
                 </div>
             </div>
         </nav>
-    <header>
-
     </header>
 
     <div class="container">
