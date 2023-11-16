@@ -8,10 +8,11 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\JuegoController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ReportController;
 
 
 //--------------- ADMINISTRADORES ---------------
-Route::middleware(['auth' , 'role:administrador'])->group(function () {
+Route::middleware(['auth' , 'roles:administrador'])->group(function () {
     // esta ruta solo la puede ver el administrador
     // puede ser un controlador o una vista
     Route::get('/admin', function () {
@@ -32,13 +33,16 @@ Route::middleware(['auth' , 'role:administrador'])->group(function () {
     Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
-    Route::get('/users/download-excel', [GControllers::class,'generarExcel'])->name('users.descargar-excel');
-    Route::get('/users/download-pdf',[GamesController::class,'generarPDF'])->name('users.descargar-pdf');
+    //Route::get('/users/download-excel', [GamesControllers::class,'generarExcel'])->name('users.descargar-excel');
+    //Route::get('/users/download-pdf',[GamesController::class,'generarPDF'])->name('users.descargar-pdf');
+
+    Route::get('/users/download-excel', [ReportController::class, 'generateExcel'])->name('users.descargar-excel');
+    Route::get('/users/download-pdf', [ReportController::class, 'generatePDF'])->name('users.descargar-pdf');
     
 });
 
 //------------ MODERADORES -------------------
-Route::middleware(['auth', 'role:moderador'])->group(function () {
+Route::middleware(['auth', 'roles:moderador'])->group(function () {
     // esta ruta solo la puede ver el moderador
     // puede ser un controlador o una vista
     Route::get('/mod', function () {
@@ -72,6 +76,6 @@ Route::post('/register', [RegisterController::class, 'register']);
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
-//Auth::routes();
+Auth::routes();
 
 

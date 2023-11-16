@@ -7,21 +7,20 @@ use Illuminate\Http\Request;
 
 class Roles
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
-     */
     public function handle(Request $request, Closure $next, $roles)
     {
-        $newRol = explode('|', $roles);
+        $user = $request->user();
 
-        $roleName = strtolower($request->user()->role->label);
+        if (!$user || !$user->role || !$user->role->label) {
+            return abort(403, __('Unauthorized'));
+        }
 
-        if(!in_array($roleName,$newRol))
-            return abort(403,__('Unauthorized'));
+        $roleName = strtolower($user->role->label);
+        $allowedRoles = $roles ? array_map('strtolower', explode('|', $roles)) : [];
+
+        if (!in_array($roleName, $allowedRoles)) {
+            return abort(403, __('Unauthorized'));
+        }
 
         return $next($request);
     }

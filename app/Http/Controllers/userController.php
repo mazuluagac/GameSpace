@@ -45,7 +45,7 @@ class userController extends Controller
         $user->name = $request->get('name');
         $user->email = $request->get('email'); 
         $user->password = $request->get('password');
-        $user->role = $request->get('role');
+        $user->role_id = $request->get('role');
         $user->save();
         return redirect()->route('users.index')->with('success', 'User has been added');
     }
@@ -77,7 +77,7 @@ class userController extends Controller
         $user->name = $request->get('name');
         $user->email= $request->get('email');
         $user->password = $request->get('password');
-        $user->role = $request->get('role');
+        $user->role_id = $request->get('role');
         $user->save();
         return redirect()->route('users.index')->with('success', 'User has been updated');
     }

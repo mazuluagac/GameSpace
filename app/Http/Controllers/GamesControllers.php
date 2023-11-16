@@ -133,7 +133,11 @@ class GamesControllers extends Controller
     public function generarPDF()
     {
         $games = Game::all();
-        $pdf = PDF::loadView('games.download', compact('game'));
+        $data = ['games' => $games]; // Pasar datos a la vista, si es necesario
+    
+        $pdf = PDF::loadView('games.pdf', $data);
         return $pdf->download('games.pdf');
     }
+    
+  
 }
