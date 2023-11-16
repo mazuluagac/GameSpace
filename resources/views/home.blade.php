@@ -9,6 +9,25 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <title>GAME SPACE | Descarga juegos para PC</title>
   <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+  <style>
+    /* Estilos CSS para la tabla */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+
 </head>
 <body style="background-image: url('assets/fondoGame.png');">
         <!-- Aquí puedes colocar la barra de navegación u otros elementos de cabecera -->
@@ -129,6 +148,20 @@
       <p id="image-info-text"></p>
     </div>
 
+    
+    <!-- Contenedor para mostrar la información de la API -->
+    <div id="api-container">
+      <h2 style="color: #dddddd;">Juegos</h2>
+      <table>
+        <tr>
+          <th>Título</th>
+          <th>Género</th>
+          <th>Año de lanzamiento</th>
+          <th>Calificación</th>
+          <th>Portada</th>
+      </table>
+    </div>
+
     <!-- footer -->
     <footer class="pie-pagina">
       <div class="grupo-1">
@@ -163,5 +196,52 @@
       </div>
   </footer>
   <script src="js/script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const apiContainer = document.getElementById("api-container");
+      const apiKey = 'moby_ue6s0r4lAWExvm3aK0ghrHbtnl9';
+      const apiUrl = 'https://api.mobygames.com/v1/games?format=normal';
+
+      fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'user-key': apiKey,
+        },
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Crear la tabla y encabezados
+        apiContainer.innerHTML = `
+          <h2>Juegos de Nintendo Switch</h2>
+          <table>
+            <tr>
+              <th>Título</th>
+              <th>Género</th>
+              <th>Año de lanzamiento</th>
+              <th>Calificación</th>
+              <th>Portada</th>
+            </tr>
+          </table>
+        `;
+
+        // Recorrer la lista de juegos y agregar filas a la tabla
+        data.forEach(juego => {
+          const tableRow = document.createElement('tr');
+          tableRow.innerHTML = `
+            <td>${juego.title}</td>
+            <td>${juego.genres.join(', ')}</td>
+            <td>${juego.release_date}</td>
+            <td>${juego.rating}</td>
+            <td><img src="${juego.cover_url}" alt="${juego.title}" width="100"></td>
+          `;
+          document.querySelector('table').appendChild(tableRow);
+        });
+      })
+      .catch(error => {
+        console.error('Error al obtener datos de la API:', error);
+      });
+    });
+  </script>
 </body>
 </html>
