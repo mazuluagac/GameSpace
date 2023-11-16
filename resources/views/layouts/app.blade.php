@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
     <title>GAME SPACE | Descarga juegos para PC</title>
     
@@ -13,39 +14,38 @@
 
 <body style="background-image: url('{{ asset('assets/fondoGame.png') }}');">
     <header>
-        <!-- Barra de navegación -->
+        <!-- Aquí puedes colocar la barra de navegación u otros elementos de cabecera -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary" id="mainNav">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ms-1"></i>
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand" href="{{ route('home')}}">
-                        <img src="{{ asset('assets/logo game space/2.png') }}" alt="Logo" width="50" height="50" class="...">
-                        GAME SPACE
-                    </a>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('home')}}">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#juegosNS">Juegos Switch</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('games.index') }}">Listado Juegos</a>
-                        </li>
-                    </ul>
-                    <form action="{{ route('search.search') }}" class="d-flex" role="search" method="GET">
-                        <input class="form-control me-2" type="search" placeholder="Buscar juego" aria-label="search">
-                        <button class="btn btn-outline-primary" type="submit">Buscar</button>
-                    </form>
-                    <button class="btn btn-outline-primary" id="botonIniciarS"><a href="{{ route('login')}}">Iniciar Sesión</a></button>
-                    <button class="btn btn-outline-primary" id="botonCrearC"><a href="{{ route('register')}}">Crear cuenta</a></button>
-                </div>
-            </div>
-        </nav>
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars ms-1"></i>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="{{ route('home')}}">
+            <img src="assets/logo game space/2.png" alt="Logo" width="50" height="50" class="...">
+            GAME SPACE</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ route('home')}}">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#juegosNS">Juegos Switch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('games.index') }}">Listado Juegos</a>
+          </li>
+        </ul>
+        <form action="{{ route('search.search') }}" class="d-flex" role="search" method="GET">
+          <input class="form-control me-2" type="search" placeholder="Buscar juego" aria-label="search">
+          <button class="btn btn-outline-primary" type="submit">Buscar</button>
+        </form>
+        <button class="btn btn-outline-primary" id="botonIniciarS"><a href="{{ route('login')}}">Iniciar Sesion</a></button>
+        <button class="btn btn-outline-primary" id="botonCrearC"><a href="{{ route('register')}}">Crear cuenta</a></button>
+      </div>
+    </div>
+  </nav>
     </header>
 
     <div class="container">
